@@ -32,7 +32,10 @@ int[,] NumbersSquar (int[,] matrix)
     {
         for(int j = 0; j < matrix.GetLength(1); j ++)
         {
-            if((i%2==0)&&(j%2==0)) matrix [i,j] = (matrix [i,j])*(matrix [i,j]);
+            if((i%2==0)&&(j%2==0)) 
+            {
+                matrix [i,j] = (matrix [i,j])*(matrix [i,j]);
+            }
         }
     }
     return matrix;
