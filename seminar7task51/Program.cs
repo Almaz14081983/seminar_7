@@ -24,19 +24,21 @@ int[,] GetArray(int m, int n, int min, int max)
     return result;
 }
 
-int[,] NumbersSquar (int[,] matrix)
+int DiagSum (int[,] matrix)
 {
     int sum = 0;
     for(int i = 0; i < matrix.GetLength(0); i ++)
     {
         for(int j = 0; j < matrix.GetLength(1); j ++)
-        {
-            
-            if(i==j) sum = sum + (matrix [i,j]);
+        {            
+            if(i==j) 
+            {
+                sum = sum + (matrix [i,j]);
+            }
         }
     }
-    Console.WriteLine("Сумма элементов главной диагоналиsum равно " + sum);
-    return matrix;
+    //Console.WriteLine("Сумма элементов главной диагоналиsum равно " + sum);
+    return sum;
    
 }
 
@@ -55,5 +57,5 @@ void PrintArray(int[,] matrix)
 int[,] array = GetArray( rows, columens, 1, 10);
 PrintArray(array);
 Console.WriteLine();
-NumbersSquar (array);
- // Console.WriteLine(NumbersSquar(array));
+// NumbersSquar (array);
+Console.WriteLine($"Сумма элементов главной диагонали равнa {DiagSum(array)}");
