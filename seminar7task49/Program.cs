@@ -6,6 +6,7 @@
 //5 9 2 3   5 81 2 9
 //8 4 2 4   8 4 2 4
 
+
 Console.Write("Введите колличество строк массива  ");
 int rows = int.Parse(Console.ReadLine()!);
 
