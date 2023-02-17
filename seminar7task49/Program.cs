@@ -10,7 +10,7 @@
 Console.Write("Введите колличество строк массива  ");
 int rows = int.Parse(Console.ReadLine()!);
 
-Console.Write("Введите колличество строк массива  ");
+Console.Write("Введите колличество столбцов массива  ");
 int columens = int.Parse(Console.ReadLine()!);
 
 int[,] GetArray(int m, int n, int min, int max)
