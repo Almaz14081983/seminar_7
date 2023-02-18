@@ -35,29 +35,30 @@ int[,] GetArray(int m, int n, int min, int max)
 
 void ArithmMean(int[,] matrix)
 {
- //   int sum = 0;
-  //  int averageColumn = 0;
-  //  int[,] result = new int [matrix.GetLength(0),matrix.GetLength(1)];
+
     int[] sum = new int [matrix.GetLength(1)];
 
     for(int i = 0; i < matrix.GetLength(0); i ++)
     {
         for(int j = 0; j < matrix.GetLength(1); j ++)
         {    
-            Console.WriteLine(matrix[i,j]);      
-            sum[i] = sum[i] + matrix[j,i];
+         //   Console.Write(matrix[i,j]);      
+            sum[j] = sum[j] + matrix[i,j];
                    
         }    
-        Console.WriteLine();  
+ //       Console.WriteLine();  
     }  
     Console.WriteLine();  
+    Console.Write("Среднее арифметическое каждого столбца: ");
     foreach (double elem in sum)
     {
-        Console.WriteLine(elem/matrix.GetLength(1)); 
+        double res = elem/matrix.GetLength(1);
+        Console.Write($"{Math.Round(res, 2)}; "); 
     }
-//    if((rows*columens)==count) Console.WriteLine("по индексу ["+ rowIndex +", " + columnIndex + "] нет элемента. " );
-//    return sum;
+
 }
+
+Math.Round(new Random().NextDouble() + new Random().Next(min, max), 1);
 
 void PrintArray(int[,] matrix)
 {
