@@ -1,18 +1,15 @@
 ﻿// Задача 
 // Дан двумерный массив
 // Найти найти нечетные элементы, на четных местах 
-// квадраты
-// например
-//1 4 7 2   1 4 7 2
-//5 9 2 3   5 81 2 9
-//8 4 2 4   8 4 2 4
 
 
 Console.Write("Введите колличество строк массива  ");
 int rows = int.Parse(Console.ReadLine()!);
 
-Console.Write("Введите колличество строк массива  ");
+Console.Write("Введите колличество столбцов массива  ");
 int columens = int.Parse(Console.ReadLine()!);
+
+
 
 int[,] GetArray(int m, int n, int min, int max)
 {
@@ -27,19 +24,27 @@ int[,] GetArray(int m, int n, int min, int max)
     return result;
 }
 
-int[,] NumbersSquar (int[,] matrix)
+void  Checkelements (int[,] matrix)
 {
+    Console.Write("нечетные элементы, на четных местах: ");
     for(int i = 0; i < matrix.GetLength(0); i ++)
     {
         for(int j = 0; j < matrix.GetLength(1); j ++)
         {
+            
             if((i%2==0)&&(j%2==0)) 
             {
-                matrix [i,j] = (matrix [i,j])*(matrix [i,j]);
+                if(matrix[i,j]%2 !=0)
+                {
+   //                 Console.Write("нечетные элементы, на четных местах: ");
+                    Console.Write($"{matrix[i,j]} ");
+                   
+                }
             }
         }
     }
-    return matrix;
+//    return matrix;
+
 }
 
 void PrintArray(int[,] matrix)
@@ -57,5 +62,5 @@ void PrintArray(int[,] matrix)
 int[,] array = GetArray( rows, columens, 1, 10);
 PrintArray(array);
 Console.WriteLine();
-NumbersSquar (array);
-PrintArray(array);
+Checkelements(array);
+// PrintArray(array);
